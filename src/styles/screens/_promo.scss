@@ -1,0 +1,134 @@
+.promo {
+  &__banner {
+    position: relative;
+    left: 0;
+    top: 0;
+    right: 0;
+    min-height: 800px;
+    max-height: 800px;
+    // padding-inline: 124px;
+    background-image: url(../assets/images/banner.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    @include tablet {
+      background-position: center;
+      margin: 0 auto;
+      padding-inline: 0px;
+    }
+
+    @include mobile {
+      background-position: center;
+      padding-inline: 10px;
+    }
+  }
+
+  &__container {
+    padding-top: 206px;
+  }
+
+  &__contacts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 15px;
+    height: 100%;
+    margin-left: 50px;
+    writing-mode: vertical-rl;
+    transform: scale(-1);
+
+    @include tablet {
+      display: none;
+    }
+
+    @include desktop {
+      bottom: 0;
+      left: 93%;
+    }
+  }
+
+  &__text {
+    font-size: rem(16px);
+    font-weight: 700;
+  }
+
+  &__separator {
+    width: 2px;
+    height: 70px;
+    background: map-get($colors, black);
+  }
+
+  &__icon {
+    transform: scale(-1);
+  }
+
+  &__supra-title {
+    // position: relative;
+    left: -26px;
+    margin-bottom: 9px;
+    // font-weight: 700;
+    // font-size: rem(16px);
+    z-index: 3;
+
+    &::before {
+      //   content: "";
+      position: relative;
+      top: 12px;
+      left: 26px;
+      display: inline-block;
+      //   width: 36px;
+      //   height: 36px;
+      //   border-radius: 36px;
+      //   background: map-get($colors, orange);
+      //   z-index: -1;
+    }
+  }
+
+  &__title {
+    margin-bottom: 25px;
+    font-size: rem(48px);
+    font-weight: 700;
+    line-height: 60px;
+
+    @include tablet {
+      font-size: rem(36px);
+    }
+
+    @include mobile {
+      margin-bottom: 32px;
+      font-size: rem(26px);
+      line-height: 30px;
+    }
+  }
+
+  &__button-box {
+    display: flex;
+    grid-gap: 44px;
+  }
+
+  &__button {
+    border: none;
+    background: inherit;
+    font-size: rem(14px);
+    font-weight: 700;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(0.97);
+    }
+
+    &:active {
+      transform: scale(1);
+    }
+
+    &--active {
+      padding: 12px 25px 12px 26px;
+      background: map-get($colors, orange);
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+    }
+  }
+}

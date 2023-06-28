@@ -1,0 +1,95 @@
+.burger {
+  display: flex;
+  height: 100vh;
+  z-index: 4;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: -100%;
+  transition: all 1s;
+
+  &--active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    transition: all 1s;
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    min-width: 345px;
+    padding: 24px 25px 50px 40px;
+    background: map-get($colors, orange);
+
+    @include tablet {
+      max-width: 215px;
+      min-width: 170px;
+      padding: 24px 25px 50px 20px;
+    }
+
+    @include mobile {
+      max-width: 195px;
+      min-width: 150px;
+      padding: 24px 25px 50px 20px;
+    }
+  }
+
+  &__button-close {
+    align-self: flex-end;
+    margin-bottom: 87px;
+  }
+
+  &__contacts {
+    display: flex;
+    grid-gap: 15px;
+    align-self: center;
+  }
+
+  &__icon {
+    transform: rotate(90deg);
+  }
+
+  &__overlay {
+    flex-grow: 2;
+    z-index: 3;
+    background: map-get($colors, whiteLight);
+  }
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 15px;
+  flex-grow: 2;
+
+  &__item {
+    color: map-get($colors, white);
+    font-size: rem(24px);
+    font-weight: 700;
+    list-style-type: none;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      border-radius: 15px;
+      margin-right: 20px;
+      border: 1px solid map-get($colors, black);
+    }
+
+    &:hover {
+      &::before {
+        background: map-get($colors, black);
+      }
+    }
+
+    @include mobile {
+      font-size: rem(22px);
+    }
+  }
+}

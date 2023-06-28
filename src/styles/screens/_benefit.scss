@@ -1,0 +1,174 @@
+.benefit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+
+  @include mobile {
+    padding: 0px 12px 0px 8px;
+  }
+
+  &__supra-title {
+    @include mobile {
+      margin-bottom: 20px;
+      margin-top: 40px;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 25px;
+
+    @include mobile {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__separator {
+    margin-bottom: 60px;
+
+    @include mobile {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.resume {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 136px;
+  padding-inline: 65px;
+
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 40px;
+    padding: 0px;
+    width: 100%;
+  }
+
+  &__list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 45px;
+
+    @include mobile {
+      grid-gap: 10px;
+    }
+  }
+
+  &__title {
+    font-size: rem(20px);
+    font-weight: 700;
+
+    @include mobile {
+      margin-bottom: 35px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 12px;
+
+    @include mobile {
+      grid-gap: 10px;
+    }
+  }
+
+  &__container {
+    position: relative;
+    left: -32px;
+    display: flex;
+    flex-direction: row;
+    grid-gap: 19px;
+
+    @include tablet {
+      left: -24px;
+    }
+  }
+
+  &__info-box {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  &__name {
+    font-size: rem(14px);
+    font-weight: 700;
+  }
+
+  &__short-info {
+    font-size: rem(12px);
+    font-weight: 500;
+  }
+
+  &__description {
+    padding-left: 8px;
+    font-size: rem(12px);
+    font-weight: 500;
+
+    @include tablet {
+      padding-left: 16px;
+    }
+  }
+}
+
+.vertical-element {
+  position: absolute;
+  left: 0;
+  top: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  @include tablet {
+    left: 8px;
+  }
+
+  &__circle {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    background: map-get($colors, orange);
+  }
+
+  &__line {
+    width: 1px;
+    height: inherit;
+    background: map-get($colors, black);
+  }
+}
+
+.figure {
+  display: flex;
+  align-items: center;
+
+  &__line {
+    width: 42px;
+    height: 1px;
+    background: map-get($colors, black);
+  }
+
+  &__circle {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    border-radius: 36px;
+    background: map-get($colors, orange);
+  }
+
+  &__image {
+    position: relative;
+    top: 9px;
+    left: 18px;
+  }
+}
