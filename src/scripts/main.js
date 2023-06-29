@@ -2,6 +2,8 @@ const burgerButton = document.querySelector(".header__burger");
 const burgerMenu = document.querySelector(".burger");
 const burgerOverlay = document.querySelector(".burger__overlay");
 const burgerClose = document.querySelector(".burger__button-close");
+const burgerLinks = burgerMenu.getElementsByClassName("nav__link");
+console.log(burgerLinks);
 
 const showBurger = () => {
   burgerMenu.classList.add("burger--active");
@@ -16,6 +18,10 @@ burgerButton.addEventListener("click", showBurger);
 burgerOverlay.addEventListener("click", closeBurger);
 
 burgerClose.addEventListener("click", closeBurger);
+
+for (link of burgerLinks) {
+  link.addEventListener("click", closeBurger);
+}
 
 const contactsForm = document.forms.contacts;
 
