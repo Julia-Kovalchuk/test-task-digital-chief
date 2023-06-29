@@ -1,0 +1,198 @@
+.contacts {
+  display: flex;
+  grid-gap: 68px;
+  height: max-content;
+  //   width: 100%;
+
+  @include tablet {
+    padding-left: 20px;
+    grid-gap: 20px;
+    margin-top: 50px;
+  }
+
+  @include mobile {
+    padding-inline: 5px;
+  }
+
+  &__image {
+    max-width: 400px;
+    height: 600px;
+    object-fit: cover;
+    margin-left: 52px;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__supra-title {
+    top: -14px;
+    left: -26px;
+    z-index: 3;
+
+    &::before {
+      position: relative;
+      top: 12px;
+      left: 26px;
+      display: inline-block;
+    }
+
+    @include tablet {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__title {
+    font-size: rem(36px);
+    font-weight: 700;
+    line-height: 60px;
+    margin-top: -10px;
+
+    @include tablet {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__comment {
+    margin: 20px 0px;
+  }
+
+  &__social-box {
+    display: flex;
+    grid-gap: 25px;
+
+    @include tablet {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__form-box {
+    width: 100%;
+    padding-right: 35px;
+
+    @include tablet {
+      padding-right: 0;
+    }
+  }
+}
+
+.form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  grid-gap: 15px;
+  width: 100%;
+
+  &__inputs-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 25px;
+    margin-top: -10px;
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__button {
+    width: max-content;
+    padding: 12px 26px;
+    margin-top: 12px;
+    background: map-get($colors, orange);
+    border: none;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  &__container {
+    position: relative;
+    width: 100%;
+    font-size: rem(12px);
+    font-weight: 500;
+  }
+
+  &__field-name {
+    position: relative;
+    top: 10px;
+    left: 0;
+    padding-inline: 8px;
+    margin-left: 12px;
+    background-color: white;
+    z-index: 3;
+  }
+
+  &__input {
+    width: 92%;
+    max-width: 100%;
+    padding: 14px 0 13px 20px;
+    border: none;
+    outline: none;
+    border: 1px solid map-get($colors, black);
+
+    &--big {
+      width: 96.3%;
+      height: 155px;
+      resize: none;
+
+      @include tablet {
+        width: 92%;
+      }
+    }
+
+    &--invalid {
+      border: 1px solid map-get($colors, red);
+    }
+
+    &:focus {
+      border: 1px solid map-get($colors, orange);
+    }
+
+    &:hover {
+      border: 1px solid map-get($colors, orange);
+    }
+  }
+
+  &__agreement {
+    display: none;
+    align-items: center;
+    grid-gap: 10px;
+    text-align: center;
+    font-size: rem(12px);
+    font-weight: 500;
+
+    @include mobile {
+      display: flex;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: map-get($colors, blue);
+  }
+}
+
+.error {
+  position: absolute;
+  bottom: -18px;
+  left: 20px;
+  color: map-get($colors, red);
+  font-size: rem(10px);
+}
+
+.hidden {
+  display: none;
+}
+
+.success {
+  position: absolute;
+  bottom: 45px;
+  left: 0;
+  width: 100%;
+  font-size: rem(12px);
+  color: map-get($colors, orange);
+  transition: all 0.3s;
+}

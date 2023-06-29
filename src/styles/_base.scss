@@ -49,6 +49,8 @@ p {
 
   @include tablet {
     padding-left: 20px;
+    border-left: none;
+    border-right: none;
   }
 
   @include mobile {
