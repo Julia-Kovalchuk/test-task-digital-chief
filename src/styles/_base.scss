@@ -40,6 +40,7 @@ p {
 }
 
 .wrapper {
+  position: relative;
   max-width: 1140px;
   margin: 0 auto;
   height: 100vh;
@@ -54,7 +55,7 @@ p {
   }
 
   @include mobile {
-    padding-inline: 0px;
+    padding-inline: 10px;
   }
 }
 
@@ -98,7 +99,8 @@ p {
   background: map-get($colors, orange);
 }
 
-.container {
-  //   max-width: 1170px;
-  //   margin: 0 auto;
+.anchor-link {
+  position: absolute;
+  top: 0;
+  left: 0;
 }

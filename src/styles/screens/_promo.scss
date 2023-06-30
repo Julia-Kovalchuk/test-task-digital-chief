@@ -6,20 +6,22 @@
     right: 0;
     min-height: 800px;
     max-height: 800px;
-    // padding-inline: 124px;
     background-image: url(../assets/images/banner.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 
     @include tablet {
-      background-position: center;
+      max-width: 100%;
       margin: 0 auto;
       padding-inline: 0px;
+      background-image: url(../assets/images/banner-mini.png);
+      background-repeat: no-repeat;
+      background-position: right;
+      background-size: cover;
     }
 
     @include mobile {
-      background-position: center;
       padding-inline: 10px;
     }
   }
@@ -67,24 +69,15 @@
   }
 
   &__supra-title {
-    // position: relative;
     left: -26px;
     margin-bottom: 9px;
-    // font-weight: 700;
-    // font-size: rem(16px);
     z-index: 3;
 
     &::before {
-      //   content: "";
       position: relative;
       top: 12px;
       left: 26px;
       display: inline-block;
-      //   width: 36px;
-      //   height: 36px;
-      //   border-radius: 36px;
-      //   background: map-get($colors, orange);
-      //   z-index: -1;
     }
   }
 
